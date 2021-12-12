@@ -16,7 +16,6 @@ for i in range(len(data)):
             total += (curr + 1)
 
 
-
 def find_basin(point):
     points_to_check = [point]
     checked = set()
@@ -48,7 +47,7 @@ for point in low_points:
 
 for i in range(len(data)):
     for j in range(len(data[0])):
-        if (i,j) in basins:
+        if not (i, j) in basins:
             print("\033[91m" + str(data[i][j]) + "\033[0m", end="")
         else:
             print(data[i][j], end="")
