@@ -1,6 +1,6 @@
 from statistics import median
 
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [line.strip() for line in f.readlines()]
 
 starts = {"(", "[", "<", "{"}

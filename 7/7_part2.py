@@ -1,7 +1,7 @@
 from functools import cache
 
-with open('input.txt', 'r') as f:
-    data = [int(x) for x in f.read().split(',')]
+with open("input.txt", "r") as f:
+    data = [int(x) for x in f.read().split(",")]
 min_fuel = 9999999999999999
 
 

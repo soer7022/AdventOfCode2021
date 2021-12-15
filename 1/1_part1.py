@@ -1,4 +1,4 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [int(i) for i in f.readlines()]
 count = 0
 prev = 0

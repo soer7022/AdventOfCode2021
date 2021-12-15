@@ -1,4 +1,4 @@
-with open('input.txt', 'r') as f:
+with open("input.txt", "r") as f:
     data = [[int(x) for x in line.strip()] for line in f.readlines()]
 
 
@@ -19,7 +19,7 @@ def step_2():
             # Increase all adjacent values by 1
             for i in range(curr[0] - 1, curr[0] + 2):
                 for j in range(curr[1] - 1, curr[1] + 2):
-                    if i >= 0 and i < len(data) and j >= 0 and j < len(data[i]):
+                    if 0 <= i < len(data) and 0 <= j < len(data[i]):
                         data[i][j] += 1
                         if data[i][j] > 9:
                             to_increase.append((i, j))

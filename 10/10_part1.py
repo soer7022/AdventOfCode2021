@@ -1,10 +1,10 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [line.strip() for line in f.readlines()]
 
 starts = {"(", "[", "<", "{"}
 close = {")", "]", ">", "}"}
 pair = {"(": ")", "[": "]", "<": ">", "{": "}"}
-scores =  {")": 3, "]": 57, ">": 25137, "}": 1197}
+scores = {")": 3, "]": 57, ">": 25137, "}": 1197}
 total = 0
 for line in data:
     looking_for = []

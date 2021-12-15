@@ -1,4 +1,4 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [[int(n) for n in f.strip()] for f in f.readlines()]
 
 low_points = []
@@ -13,7 +13,7 @@ for i in range(len(data)):
 
         if curr < min(above, below, left, right):
             low_points.append((i, j))
-            total += (curr + 1)
+            total += curr + 1
 
 
 def find_basin(point):

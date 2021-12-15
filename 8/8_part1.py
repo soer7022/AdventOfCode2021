@@ -1,4 +1,4 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [l.split("|")[-1].strip().split(" ") for l in f.readlines()]
 
 total = 0

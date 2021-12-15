@@ -1,4 +1,4 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = []
     for line in f.readlines():
         (direction, distance) = line.split(" ")
@@ -15,4 +15,4 @@ for (direction, distance) in data:
     elif direction == "down":
         aim += distance
 
-print(vertical*horizontal)
+print(vertical * horizontal)

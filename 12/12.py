@@ -1,9 +1,9 @@
 vertices = {}
-with open('input.txt') as f:
+with open("input.txt") as f:
     lines = f.readlines()
 for line in lines:
     line = line.strip()
-    line = line.split('-')
+    line = line.split("-")
     try:
         vertices[line[0]].add(line[1])
     except KeyError:

@@ -1,10 +1,10 @@
 boards = []
-with open('input.txt') as f:
+with open("input.txt") as f:
     numbers = [int(i) for i in f.readline().split(",")]
     curr_board = []
     for i in f.readlines():
         i = i.strip()
-        if i == '':
+        if i == "":
             if len(curr_board) > 0:
                 boards.append(curr_board)
             curr_board = []
@@ -14,6 +14,8 @@ with open('input.txt') as f:
         boards.append(curr_board)
 
 picked = []
+
+
 def has_won(board):
     for i in range(5):
         did_win = True
@@ -31,7 +33,6 @@ def has_won(board):
             return True
 
 
-
 winning_boards = []
 last = []
 for number in numbers:
@@ -42,7 +43,22 @@ for number in numbers:
             winning_boards.append(board)
     if len(winning_boards) == len(boards):
         print(winning_boards[-1], picked[-1])
-        print(number, sum(number for row in winning_boards[-1] for number in row if number not in picked))
-        print(number * sum(number for row in winning_boards[-1] for number in row if number not in picked))
+        print(
+            number,
+            sum(
+                number
+                for row in winning_boards[-1]
+                for number in row
+                if number not in picked
+            ),
+        )
+        print(
+            number
+            * sum(
+                number
+                for row in winning_boards[-1]
+                for number in row
+                if number not in picked
+            )
+        )
         exit()
-

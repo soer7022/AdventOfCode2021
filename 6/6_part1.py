@@ -1,4 +1,4 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [int(n) for n in f.readline().split(",")]
 
 for i in range(80):

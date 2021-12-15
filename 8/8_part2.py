@@ -1,19 +1,21 @@
-with open('input.txt') as f:
+with open("input.txt") as f:
     data = [i.strip().split(" ") for l in f.readlines() for i in l.split("|")]
 
 total = 0
 
-def seen_string(string: set, know:dict):
+
+def seen_string(string: set, know: dict):
     for key in know.keys():
         if type(key) != int:
             if string == set(key):
                 return know[key]
     return False
 
+
 for i in range(0, len(data), 2):
     known = {}
     readings = data[i]
-    to_find = data[i+1]
+    to_find = data[i + 1]
     for i in range(200):
         for reading in readings:
             letters = set(reading)
@@ -35,7 +37,7 @@ for i in range(0, len(data), 2):
                     # Check if number is 3
                     if 1 in known:
                         if set(known[1]).issubset(letters):
-                            #must be 3
+                            # must be 3
                             known[reading] = 3
                             known[3] = reading
                             continue
@@ -58,8 +60,8 @@ for i in range(0, len(data), 2):
                     num_9 = set("cefabd")
                     # Check if number is 0 or 9
                     if 3 in known and 6 in known:
-                        #print(set(known[3]).issubset(letters))
-                        #print(set(known[3]).issubset(num_9))
+                        # print(set(known[3]).issubset(letters))
+                        # print(set(known[3]).issubset(num_9))
                         pass
                     # Check if number is 9
                     if 4 in known:
@@ -78,7 +80,11 @@ for i in range(0, len(data), 2):
                                 # must be 0
                                 known[reading] = 0
                                 known[0] = reading
-    total += int(str(seen_string(set(to_find[0]), known))+ str(seen_string(set(to_find[1]), known)) + str(seen_string(set(to_find[2]), known)) + str(seen_string(set(to_find[3]), known)))
+    total += int(
+        str(seen_string(set(to_find[0]), known))
+        + str(seen_string(set(to_find[1]), known))
+        + str(seen_string(set(to_find[2]), known))
+        + str(seen_string(set(to_find[3]), known))
+    )
 
 print(total)
-

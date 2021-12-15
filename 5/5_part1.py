@@ -1,7 +1,7 @@
 lines = []
-with open('input.txt') as f:
+with open("input.txt") as f:
     for line in f.readlines():
-        p1, p2 = line.split('->')
+        p1, p2 = line.split("->")
         p1 = p1.split(",")
         p2 = p2.split(",")
         x1 = int(p1[0])
